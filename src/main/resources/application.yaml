@@ -1,0 +1,32 @@
+#打包环境
+spring:
+  profiles:
+    active: dev
+
+---
+
+#dev环境：不输出日志文件
+spring:
+  config:
+    activate:
+      on-profile: dev
+
+---
+
+#test环境：以logback-spring-test.xml为规则输出日志文件
+spring:
+  config:
+    activate:
+      on-profile: test
+logging:
+  config: classpath:logback-spring-${spring.config.activate.on-profile}.xml
+
+---
+
+#pro环境：以logback-spring-pro.xml为规则输出日志文件
+spring:
+  config:
+    activate:
+      on-profile: pro
+logging:
+  config: classpath:logback-spring-${spring.config.activate.on-profile}.xml

@@ -1,0 +1,16 @@
+.idea
+target/
+*.iml
+mvnw
+mvnw.cmd
+.mvn/
+*/.git/*
+*.class
+*.git
+*.project
+*.svn
+/.settings/
+/target
+*.classpath
+*.settings
+Servers/
