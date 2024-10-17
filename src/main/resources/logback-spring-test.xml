@@ -1,15 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration debug="false">
-    <!-- 获取yml中的log地址 -->
-    <springProperty scope="context" name="LOG_HOME" source="logs-file-path" defaultValue="/your-path/logs"/>
+    <!-- 获取properties中的log地址 -->
+    <springProperty scope="context" name="LOG_HOME" source="logging.file.path" defaultValue="D:\2\logs"/>
     <!-- 文件名称前缀 -->
     <property name="APP_NAME" value="xmz" />
 
     <!-- 控制台输出 -->
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
         <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
-            <!--格式化输出：%d表示日期，%thread表示线程名，%-5level：级别从左显示5个字符宽度%msg：日志消息，%n是换行符 -->
-            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50}-%msg %n</pattern>
+            <!--
+            格式化输出：
+            %d表示日期，
+            %thread表示线程名，
+            %-5level：级别从左显示5个字符宽度（就是不够5个字符也要凑齐5个字符的宽度，为了让每一行显示的level都要对齐）
+            %logger{50}：表示logger名字最长50个字符，否则按照句点分割。
+            %msg：日志消息，%n是换行符
+            -->
         </encoder>
     </appender>
 
@@ -26,7 +32,15 @@
             <totalSizeCap>3GB</totalSizeCap>
         </rollingPolicy>
         <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
-            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50}-%msg%n</pattern>
+            <!--
+            格式化输出：
+            %d表示日期，
+            %thread表示线程名，
+            %-5level：级别从左显示5个字符宽度（就是不够5个字符也要凑齐5个字符的宽度，为了让每一行显示的level都要对齐）
+            %logger{50}：表示logger名字最长50个字符，否则按照句点分割。
+            %msg：日志消息，%n是换行符
+            -->
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50}: %msg%n</pattern>
         </encoder>
     </appender>
 

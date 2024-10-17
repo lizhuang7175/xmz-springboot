@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
-@MapperScan({"com.**.mapper"})  //mapper包扫描
+@MapperScan({"com.**.mapper"})
 @SpringBootApplication
 public class XmzApplication extends SpringBootServletInitializer {
 
