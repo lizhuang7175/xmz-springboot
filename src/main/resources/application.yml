@@ -1,8 +1,9 @@
-#打包环境
+#默认的环境选项
 spring:
   profiles:
     active: dev
 
+#三横杠用于分割yml
 ---
 
 #dev环境：不输出日志文件

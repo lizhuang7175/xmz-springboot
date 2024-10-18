@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration debug="false">
-    <!-- 获取properties中的log地址 -->
+    <!--
+    springProperty：从Spring上下文中读取属性值，这里就是用于读取yml中的配置
+    "source="logging.file.path"表示获取yml中的“logging.file.path”配置的地址，
+    如果yml没有配置该项，则使用defaultValue的值作为路径
+    -->
     <springProperty scope="context" name="LOG_HOME" source="logging.file.path" defaultValue="D:\2\logs"/>
-    <!-- 文件名称前缀 -->
+    <!--
+    property：自定义变量
+    文件名称前缀
+    -->
     <property name="APP_NAME" value="xmz" />
 
     <!-- 控制台输出 -->

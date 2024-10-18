@@ -1,6 +1,6 @@
 #端口号
 server:
-  port: 2024
+  port: 2025
 
 spring:
   #datasource
@@ -25,7 +25,7 @@ mybatis-plus:
   global-config:
     enable-sql-runner: true
 
-#生产环境日志配置
+#日志配置
 logging:
   level:
     #日志打印级别（配置此处会覆盖logback的配置）：key为包路径，如果要配置整个项目key为：root
